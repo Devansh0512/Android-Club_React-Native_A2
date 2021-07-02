@@ -18,8 +18,8 @@ const HomeScreen=({navigation})=>{
             <IonIcon name="ios-notifications" size={22} color="white" /><Text style={{fontSize: 16, color: 'white',}}>  Details Screen</Text>
         </Pressable>
         <Text>{'\n'}</Text>
-        <Pressable style={mystyles.button} onPress={() => navigation.navigate('Settings')}>
-            <IonIcon name="ios-settings" size={22} color="white" /><Text style={{fontSize: 16, color: 'white',}}>  Settings Screen</Text>
+        <Pressable style={mystyles.button} onPress={() => navigation.navigate('Saved')}>
+            <IonIcon name="bookmark-outline" size={22} color="white" /><Text style={{fontSize: 16, color: 'white',}}>  Saved Data</Text>
         </Pressable>
     </View>
   );
@@ -42,6 +42,7 @@ const mystyles = StyleSheet.create({
     button: {
         paddingVertical: 10,
         paddingHorizontal: 15,
+        width:200,
         backgroundColor: '#009387',
         borderRadius: 10,
         alignItems: 'center',
