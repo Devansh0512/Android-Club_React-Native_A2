@@ -10,6 +10,8 @@ import { findNodeHandle } from 'react-native';
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
+const FeedStack=createStackNavigator();
+const SettingsStack=createStackNavigator();
 const Tab=createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
@@ -42,7 +44,7 @@ const MainTabScreen = () => (
       />
       <Tab.Screen
         name="Feed"
-        component={FeedScreen}
+        component={FeedStackScreen}
         options={{
           tabBarLabel: 'Feed',
           tabBarColor: '#d02f70',
@@ -53,7 +55,7 @@ const MainTabScreen = () => (
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={SettingsStackScreen}
         options={{
           tabBarLabel: 'Settings',
           tabBarColor: '#7e956a',
@@ -77,18 +79,18 @@ const HomeStackScreen=({navigation}) =>(
         headerTitleStyle:{
           fontWeight: 'bold',
         },
-        // gestureEnabled: true,
-        // gestureDirection: "horizontal",
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
         // function for sliding screen effect animation that comes in IOS
-        // ...TransitionPresets.SlideFromRightIOS //Alternate for the below transitionspec and cardStyleInterpolator 
+        ...TransitionPresets.SlideFromRightIOS //Alternate for the below transitionspec and cardStyleInterpolator 
         //  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         //  transitionSpec: {
         //    open: config,
         //    close: closeConfig
         //  }
       }}
-      // headerMode="float"
-      // animation="fade"
+      headerMode="float"
+      animation="fade"
     >
     <HomeStack.Screen name="Home" component={HomeScreen} options={{
         headerLeft:()=>(
@@ -109,18 +111,18 @@ const DetailsStackScreen=({navigation}) =>(
         headerTitleStyle:{
           fontWeight: 'bold',
         },
-        // gestureEnabled: true,
-        // gestureDirection: "horizontal",
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
         // function for sliding screen effect animation that comes in IOS
-        // ...TransitionPresets.SlideFromRightIOS //Alternate for the below transitionspec and cardStyleInterpolator 
+        ...TransitionPresets.SlideFromRightIOS //Alternate for the below transitionspec and cardStyleInterpolator 
         //  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         //  transitionSpec: {
         //    open: config,
         //    close: closeConfig
         //  }
       }}
-      // headerMode="float"
-      // animation="fade"
+      headerMode="float"
+      animation="fade"
     >
     <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
         headerLeft:()=>(
@@ -129,4 +131,68 @@ const DetailsStackScreen=({navigation}) =>(
       }} 
     />
     </DetailsStack.Navigator>
+);
+
+const FeedStackScreen=({navigation}) =>(
+    <FeedStack.Navigator 
+      screenOptions={{
+        headerStyle:{
+          backgroundColor:'#d02f70'
+        },
+        headerTintColor:'black',
+        headerTitleStyle:{
+          fontWeight: 'bold',
+        },
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
+        // function for sliding screen effect animation that comes in IOS
+        ...TransitionPresets.SlideFromRightIOS //Alternate for the below transitionspec and cardStyleInterpolator 
+        //  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        //  transitionSpec: {
+        //    open: config,
+        //    close: closeConfig
+        //  }
+      }}
+      headerMode="float"
+      animation="fade"
+    >
+    <FeedStack.Screen name="Feed" component={FeedScreen} options={{
+        headerLeft:()=>(
+          <Icon.Button name='ios-menu' size={25} backgroundColor="#d02f70" onPress={()=>{navigation.openDrawer()}}></Icon.Button>
+        )
+      }} 
+    />
+    </FeedStack.Navigator>
+);
+
+const SettingsStackScreen=({navigation}) =>(
+    <SettingsStack.Navigator 
+      screenOptions={{
+        headerStyle:{
+          backgroundColor:'#7e956a'
+        },
+        headerTintColor:'black',
+        headerTitleStyle:{
+          fontWeight: 'bold',
+        },
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
+        // function for sliding screen effect animation that comes in IOS
+        ...TransitionPresets.SlideFromRightIOS //Alternate for the below transitionspec and cardStyleInterpolator 
+        //  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        //  transitionSpec: {
+        //    open: config,
+        //    close: closeConfig
+        //  }
+      }}
+      headerMode="float"
+      animation="fade"
+    >
+    <SettingsStack.Screen name="Settings" component={SettingsScreen} options={{
+        headerLeft:()=>(
+          <Icon.Button name='ios-menu' size={25} backgroundColor="#7e956a" onPress={()=>{navigation.openDrawer()}}></Icon.Button>
+        )
+      }} 
+    />
+    </SettingsStack.Navigator>
 );

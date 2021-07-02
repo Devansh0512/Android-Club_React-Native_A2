@@ -4,30 +4,19 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 
 const DetailsScreen = ({navigation}) => {
     return (
-    //   <View style={styles.container}>
-    //     <Text>Details Screen</Text>
-    //     <Button
-    //         title="Go to details screen...again"
-    //         onPress={() => navigation.push("Details")}
-    //     />
-    //     <Button
-    //         title="Go to home"
-    //         onPress={() => navigation.navigate("Home")}
-    //     />
-    //   </View>
-    <View style={styles.container}>
-        <Text style={styles.titleText}>Details Screen</Text>
-        <Text style={styles.detSub}>Easy to Use</Text>
-        <Text style={styles.detSub2}>Start quickly with built-in navigators that deliver a seamless out-of-the-box experience.</Text>
-        <Text style={styles.detSub}>Components built for iOS and Android</Text>
-        <Text style={styles.detSub2}>Platform-specific look-and-feel with smooth animations and gestures.</Text>
-        <Text style={styles.detSub}>Completely customizable</Text>
-        <Text style={styles.detSub2}>If you know how to write apps using JavaScript you can customize any part of React Navigation.</Text>    
-        <Text style={styles.detSub}>Extensible platform</Text>
-        <Text style={styles.detSub2}>React Navigation is extensible at every layer— you can write your own navigators or even replace the user-facing API.</Text>
-        <View style={{ paddingTop: 30 }}>
-          <Pressable style={styles.buttonLower} onPress={() => navigation.navigate('Contributing')}>
-            <IonIcon name="globe" size={22} color="white" /><Text style={styles.textLower}>  Contributing to React Native</Text>
+    <View style={mystyles.container}>
+        <Text style={mystyles.title}>Welcome to Details Screen</Text>
+        <Text style={mystyles.head}>Name</Text>
+        <Text style={mystyles.subhead}>Devansh Mehra</Text>
+        <Text style={mystyles.head}>Current Posts</Text>
+        <Text style={mystyles.subhead}>0</Text>
+        <Text style={mystyles.head}>Followers</Text>
+        <Text style={mystyles.subhead}>70</Text>    
+        <Text style={mystyles.head}>Following</Text>
+        <Text style={mystyles.subhead}>50</Text>
+        <View>
+          <Pressable style={mystyles.button} onPress={() => navigation.push('Details')}>
+            <IonIcon name="ios-refresh" size={22} color="white" /><Text style={{color: 'white',fontSize: 16,}}>  Reload Page</Text>
           </Pressable>
         </View>
     </View>
@@ -36,34 +25,36 @@ const DetailsScreen = ({navigation}) => {
 
 export default DetailsScreen;
 
-const styles = StyleSheet.create({
+const mystyles = StyleSheet.create({
     container: {
         flex: 1, 
-        alignItems: 'center', 
         paddingHorizontal:30,
-        paddingRight:30
     },
-    titleText: {
-      fontSize: 24,
-      fontWeight: "bold",
-      color: 'black'
+    title: {
+        fontSize: 24,
+        alignSelf:'center',
+        paddingTop: 60,
+        paddingBottom:30,
+        fontWeight: "bold",
+        color: 'black'
     },
-    buttonLower: {
-      borderRadius: 10,
-      backgroundColor: 'black',
-      paddingHorizontal: 15,
-      paddingVertical: 10,
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection: 'row'
+    button: {
+        borderRadius: 10,
+        backgroundColor: '#3244cd',
+        marginTop:30,
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
     },
-    detSub: {
-        fontSize: 19,
+    head: {
+        fontSize: 22,
         paddingTop: 10,
         paddingBottom: 5,
     },
-    detSub2: {
-    fontSize: 14,
-    paddingBottom: 5
+    subhead: {
+        fontSize: 18,
+        paddingBottom: 5
   },
 });
