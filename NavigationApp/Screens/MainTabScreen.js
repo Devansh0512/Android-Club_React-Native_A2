@@ -3,7 +3,7 @@ import { createStackNavigator,TransitionPresets,CardStyleInterpolators } from '@
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import   Icon   from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './HomeScreen';
-import DetailsScreen from './DetailsScreen';
+import DetailsScreen from './DetailsScreen.js';
 import SettingsScreen from './SettingsScreen';
 import FeedScreen from './FeedScreen';
 import { findNodeHandle } from 'react-native';
