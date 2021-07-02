@@ -11,14 +11,9 @@ const HomeScreen=({navigation})=>{
     //   )
     // })
       return(
-    //   <View style={styles.container}>
-    //     <Text>Home Screen</Text>
-    //     <Button title='Go to Details Screen' onPress={()=>navigation.navigate('Details')} />
-    //   </View>
       <View style={styles.container}>
         <Text style={styles.titleText}>Welcome to the Home Page {'\n'}</Text>
         <Text style={{ paddingBottom: 40,fontSize: 18 }}>Click on a button to navigate to respective screen.{'\n\n'}For drawer Navigation, use side drawer to view other different screens.</Text>
-        {/* <IonIcon name="ios-home" size={16} color="blue"/> */}
         <Pressable style={styles.buttonLower} onPress={() => navigation.navigate('Details')}>
             <IonIcon name="ios-notifications" size={22} color="white" /><Text style={styles.textLower}>  Details Screen</Text>
         </Pressable>
